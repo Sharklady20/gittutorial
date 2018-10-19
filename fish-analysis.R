@@ -9,4 +9,8 @@ fish<-read.csv("C:/Users/Sarah/Desktop/gittutorial/data/fish.csv")
 fish %>% 
   mutate(length_cat=case_when(length>=300~"big", length<300~"small"))->fish
   
-  
+
+ggplot()+ 
+  geom_histogram(data=fish, aes(scalelength, fill=length_cat))+ 
+  facet_wrap(~length_cat)+ 
+  theme_paper()
